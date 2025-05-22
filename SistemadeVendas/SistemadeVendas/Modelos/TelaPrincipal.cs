@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemadeVendas.Telas
+namespace SistemadeVendas.Modelos
 {
     internal class TelaPrincipal
     {
