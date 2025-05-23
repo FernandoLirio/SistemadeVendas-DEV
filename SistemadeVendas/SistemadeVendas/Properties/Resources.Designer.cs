@@ -119,5 +119,15 @@ namespace SistemadeVendas.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tela_admin_cliente {
+            get {
+                object obj = ResourceManager.GetObject("tela_admin_cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

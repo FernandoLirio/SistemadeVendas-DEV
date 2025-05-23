@@ -47,12 +47,13 @@ namespace SistemadeVendas.Telas
                 {
                     conexao.Open();
 
-                    string sql = "SELECT * FROM usuario WHERE cpf_cnpj = ? AND senha = ? AND = ? AND ativo = TRUE";
+                    string sql = "SELECT * FROM usuario WHERE cpf_cnpj = ? AND senha = ? AND ativo = TRUE";
 
                     using (var cmd = new OdbcCommand(sql, conexao))
                     {
-                        cmd.Parameters.AddWithValue("@cpf_cnpj", txtCpfCnpj.Text.Trim());
-                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text.Trim());
+                        cmd.Parameters.AddWithValue("@cpf_cnpj", txtCpfCnpj.Text);
+                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
+
 
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -63,8 +64,17 @@ namespace SistemadeVendas.Telas
 
                                 MessageBox.Show($"Bem-Vindo, {nome}!");
 
-                                TelaCliente tela = new TelaCliente();
-                                tela.Show();
+                               if (tipo == "admin")
+                                {
+                                    TelaCliente tela = new TelaCliente();
+                                    tela.Show();
+                                }
+                                else
+                                {
+                                    TelaVenda tela = new TelaVenda();
+                                    tela.Show();
+                                }
+                               this.Hide();
                             }
                             else
                             {

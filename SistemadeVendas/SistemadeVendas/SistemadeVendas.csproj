@@ -73,7 +73,12 @@
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Telas\TelaProduto.cs" />
-    <Compile Include="Telas\TelaVenda.cs" />
+    <Compile Include="Telas\TelaVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaVenda.Designer.cs">
+      <DependentUpon>TelaVenda.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaVenda.resx">
+      <DependentUpon>TelaVenda.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pessoa-login-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela_admin_cliente.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
