@@ -72,7 +72,12 @@
     <Compile Include="Telas\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Telas\TelaProduto.cs" />
+    <Compile Include="Telas\TelaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\TelaProduto.Designer.cs">
+      <DependentUpon>TelaProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\TelaProduto.resx">
+      <DependentUpon>TelaProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\TelaVenda.resx">
       <DependentUpon>TelaVenda.cs</DependentUpon>

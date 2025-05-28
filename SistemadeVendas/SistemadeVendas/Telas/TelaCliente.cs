@@ -66,13 +66,14 @@ namespace SistemadeVendas.Telas
                             {
                                 string nome = reader["nome"].ToString();
                                 string cpf = reader["cpf_cnpj"].ToString();
-                                bool ativo = Convert.ToBoolean(reader["ativo"]);
+                                bool ativo = reader["ativo"].ToString() == "True" || reader["ativo"].ToString() == "true" || reader["ativo"].ToString() == "t";
 
-                                MessageBox.Show($"Cliente encontrado:\nNome: {nome}\nCPF/CNPJ: {cpf}\nStatus: {(ativo ? "Ativo" : "Inativo")}");
+
+                                encontra_cliente_admin.Text = $"Nome: {nome} | CPF/CNPJ: {cpf} | Status: {(ativo ? "Ativo" : "Inativo")}";
                             }
                             else
                             {
-                                MessageBox.Show("Cliente não encontrado.");
+                                encontra_cliente_admin.Text = "Cliente não encontrado";
                             }
                         }
                     }
@@ -90,6 +91,9 @@ namespace SistemadeVendas.Telas
             try
             {
                 bool novoStatus = radioButton_Ativar.Checked;
+                string cpfCnpj = Procura_cpfcnpj_admin.Text.Trim();
+
+                MessageBox.Show($"Tentando atualizar o status para: {novoStatus} do usuário: {cpfCnpj}");
 
                 using (OdbcConnection conexao = ConexaoBd.ObterConexao())
                 {
@@ -100,9 +104,11 @@ namespace SistemadeVendas.Telas
                     using (OdbcCommand cmd = new OdbcCommand(sql, conexao))
                     {
                         cmd.Parameters.AddWithValue("@ativo", novoStatus);
-                        cmd.Parameters.AddWithValue("@cpf_cnpj", Procura_cpfcnpj_admin.Text);
+                        cmd.Parameters.AddWithValue("@cpf_cnpj", cpfCnpj);
 
                         int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                        MessageBox.Show($"Linhas afetadas: {linhasAfetadas}");
 
                         if (linhasAfetadas > 0)
                         {
@@ -119,6 +125,18 @@ namespace SistemadeVendas.Telas
             {
                 MessageBox.Show("Erro ao atualizar o status: " + ex.Message);
             }
+        }
+
+        private void encontra_cliente_admin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_voltar_Click(object sender, EventArgs e)
+        {
+            TelaLogin tela = new TelaLogin();
+            tela.Show();
+            this.Close();
         }
     }
 }

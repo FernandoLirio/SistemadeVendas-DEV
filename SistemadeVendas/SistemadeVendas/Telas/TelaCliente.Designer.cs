@@ -45,6 +45,10 @@ namespace SistemadeVendas.Telas
             this.radioButton_Desativar = new System.Windows.Forms.RadioButton();
             this.button_Salvar_Admin = new System.Windows.Forms.Button();
             this.senha_cadastro_cliente = new System.Windows.Forms.TextBox();
+            this.encontra_cliente_admin = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button_voltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +133,7 @@ namespace SistemadeVendas.Telas
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 360);
+            this.label3.Location = new System.Drawing.Point(22, 411);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 23);
             this.label3.TabIndex = 10;
@@ -139,27 +143,25 @@ namespace SistemadeVendas.Telas
             // 
             this.Procura_nome_cliente.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Procura_nome_cliente.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Procura_nome_cliente.Location = new System.Drawing.Point(26, 404);
+            this.Procura_nome_cliente.Location = new System.Drawing.Point(26, 478);
             this.Procura_nome_cliente.Name = "Procura_nome_cliente";
             this.Procura_nome_cliente.Size = new System.Drawing.Size(292, 31);
             this.Procura_nome_cliente.TabIndex = 11;
-            this.Procura_nome_cliente.Text = "NOME:";
             // 
             // Procura_cpfcnpj_admin
             // 
             this.Procura_cpfcnpj_admin.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Procura_cpfcnpj_admin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Procura_cpfcnpj_admin.Location = new System.Drawing.Point(26, 454);
+            this.Procura_cpfcnpj_admin.Location = new System.Drawing.Point(26, 546);
             this.Procura_cpfcnpj_admin.Name = "Procura_cpfcnpj_admin";
             this.Procura_cpfcnpj_admin.Size = new System.Drawing.Size(292, 31);
             this.Procura_cpfcnpj_admin.TabIndex = 12;
-            this.Procura_cpfcnpj_admin.Text = "CPF/CNPJ:";
             // 
             // button_Procurar_cliente_admin
             // 
             this.button_Procurar_cliente_admin.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button_Procurar_cliente_admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Procurar_cliente_admin.Location = new System.Drawing.Point(37, 516);
+            this.button_Procurar_cliente_admin.Location = new System.Drawing.Point(37, 601);
             this.button_Procurar_cliente_admin.Name = "button_Procurar_cliente_admin";
             this.button_Procurar_cliente_admin.Size = new System.Drawing.Size(250, 47);
             this.button_Procurar_cliente_admin.TabIndex = 13;
@@ -170,7 +172,7 @@ namespace SistemadeVendas.Telas
             // radioButton_Ativar
             // 
             this.radioButton_Ativar.AutoSize = true;
-            this.radioButton_Ativar.Location = new System.Drawing.Point(361, 408);
+            this.radioButton_Ativar.Location = new System.Drawing.Point(534, 546);
             this.radioButton_Ativar.Name = "radioButton_Ativar";
             this.radioButton_Ativar.Size = new System.Drawing.Size(52, 17);
             this.radioButton_Ativar.TabIndex = 14;
@@ -181,7 +183,7 @@ namespace SistemadeVendas.Telas
             // radioButton_Desativar
             // 
             this.radioButton_Desativar.AutoSize = true;
-            this.radioButton_Desativar.Location = new System.Drawing.Point(361, 462);
+            this.radioButton_Desativar.Location = new System.Drawing.Point(359, 545);
             this.radioButton_Desativar.Name = "radioButton_Desativar";
             this.radioButton_Desativar.Size = new System.Drawing.Size(70, 17);
             this.radioButton_Desativar.TabIndex = 15;
@@ -193,12 +195,13 @@ namespace SistemadeVendas.Telas
             // 
             this.button_Salvar_Admin.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.button_Salvar_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Salvar_Admin.Location = new System.Drawing.Point(361, 516);
+            this.button_Salvar_Admin.Location = new System.Drawing.Point(441, 586);
             this.button_Salvar_Admin.Name = "button_Salvar_Admin";
             this.button_Salvar_Admin.Size = new System.Drawing.Size(81, 47);
             this.button_Salvar_Admin.TabIndex = 16;
             this.button_Salvar_Admin.Text = "Salvar";
             this.button_Salvar_Admin.UseVisualStyleBackColor = false;
+            this.button_Salvar_Admin.Click += new System.EventHandler(this.button_Salvar_Admin_Click);
             // 
             // senha_cadastro_cliente
             // 
@@ -210,11 +213,59 @@ namespace SistemadeVendas.Telas
             this.senha_cadastro_cliente.TabIndex = 17;
             this.senha_cadastro_cliente.Text = "Senha:";
             // 
+            // encontra_cliente_admin
+            // 
+            this.encontra_cliente_admin.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.encontra_cliente_admin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.encontra_cliente_admin.Location = new System.Drawing.Point(324, 508);
+            this.encontra_cliente_admin.Name = "encontra_cliente_admin";
+            this.encontra_cliente_admin.Size = new System.Drawing.Size(491, 31);
+            this.encontra_cliente_admin.TabIndex = 18;
+            this.encontra_cliente_admin.TextChanged += new System.EventHandler(this.encontra_cliente_admin_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 452);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 23);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Nome:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 520);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "CPF/CNPJ:";
+            // 
+            // button_voltar
+            // 
+            this.button_voltar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.button_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_voltar.Location = new System.Drawing.Point(1161, 114);
+            this.button_voltar.Name = "button_voltar";
+            this.button_voltar.Size = new System.Drawing.Size(81, 47);
+            this.button_voltar.TabIndex = 21;
+            this.button_voltar.Text = "Voltar";
+            this.button_voltar.UseVisualStyleBackColor = false;
+            this.button_voltar.Click += new System.EventHandler(this.button_voltar_Click);
+            // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 771);
+            this.Controls.Add(this.button_voltar);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.encontra_cliente_admin);
             this.Controls.Add(this.senha_cadastro_cliente);
             this.Controls.Add(this.button_Salvar_Admin);
             this.Controls.Add(this.radioButton_Desativar);
@@ -266,5 +317,9 @@ namespace SistemadeVendas.Telas
         private System.Windows.Forms.RadioButton radioButton_Desativar;
         private System.Windows.Forms.Button button_Salvar_Admin;
         private System.Windows.Forms.TextBox senha_cadastro_cliente;
+        private System.Windows.Forms.TextBox encontra_cliente_admin;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button_voltar;
     }
 }

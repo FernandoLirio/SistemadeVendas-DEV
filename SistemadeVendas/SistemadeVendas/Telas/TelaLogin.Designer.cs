@@ -35,6 +35,8 @@
             this.txtCpfCnpj = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnCadastroClientes = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -67,7 +69,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(409, 231);
+            this.pictureBox2.Location = new System.Drawing.Point(409, 287);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(427, 80);
             this.pictureBox2.TabIndex = 2;
@@ -77,7 +79,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(409, 337);
+            this.pictureBox3.Location = new System.Drawing.Point(409, 409);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(427, 80);
             this.pictureBox3.TabIndex = 3;
@@ -88,11 +90,10 @@
             this.txtCpfCnpj.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCpfCnpj.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCpfCnpj.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpfCnpj.Location = new System.Drawing.Point(418, 261);
+            this.txtCpfCnpj.Location = new System.Drawing.Point(427, 317);
             this.txtCpfCnpj.Name = "txtCpfCnpj";
             this.txtCpfCnpj.Size = new System.Drawing.Size(356, 20);
             this.txtCpfCnpj.TabIndex = 4;
-            this.txtCpfCnpj.Text = "CPF/CNPJ:";
             this.txtCpfCnpj.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtSenha
@@ -100,17 +101,17 @@
             this.txtSenha.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(418, 370);
+            this.txtSenha.Location = new System.Drawing.Point(427, 444);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(356, 20);
             this.txtSenha.TabIndex = 5;
-            this.txtSenha.Text = "SENHA:";
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // btnCadastroClientes
             // 
             this.btnCadastroClientes.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCadastroClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastroClientes.Location = new System.Drawing.Point(466, 450);
+            this.btnCadastroClientes.Location = new System.Drawing.Point(466, 504);
             this.btnCadastroClientes.Name = "btnCadastroClientes";
             this.btnCadastroClientes.Size = new System.Drawing.Size(296, 73);
             this.btnCadastroClientes.TabIndex = 6;
@@ -118,11 +119,36 @@
             this.btnCadastroClientes.UseVisualStyleBackColor = false;
             this.btnCadastroClientes.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(405, 243);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 23);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "CPF/CNPJ:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(405, 374);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 23);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "SENHA:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1217, 685);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCadastroClientes);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtCpfCnpj);
@@ -153,5 +179,7 @@
         private System.Windows.Forms.TextBox txtCpfCnpj;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnCadastroClientes;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

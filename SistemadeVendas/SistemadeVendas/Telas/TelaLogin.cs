@@ -29,11 +29,6 @@ namespace SistemadeVendas.Telas
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -47,24 +42,32 @@ namespace SistemadeVendas.Telas
                 {
                     conexao.Open();
 
-                    string sql = "SELECT * FROM usuario WHERE cpf_cnpj = ? AND senha = ? AND ativo = TRUE";
+                    string sql = "SELECT * FROM usuario WHERE cpf_cnpj = ? AND senha = ?";
 
                     using (var cmd = new OdbcCommand(sql, conexao))
                     {
-                        cmd.Parameters.AddWithValue("@cpf_cnpj", txtCpfCnpj.Text);
-                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
-
+                        cmd.Parameters.AddWithValue("@cpf_cnpj", txtCpfCnpj.Text.Trim());
+                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text.Trim());
 
                         using (var reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                var valorAtivo = reader["ativo"].ToString().ToLower();
+                                bool ativo = valorAtivo == "true" || valorAtivo == "t" || valorAtivo == "1";
+
+                                if (!ativo)
+                                {
+                                    MessageBox.Show("Usuário inativo. Contate o Administrador.");
+                                    return;
+                                }
+
                                 string tipo = reader["tipo"].ToString();
                                 string nome = reader["nome"].ToString();
 
-                                MessageBox.Show($"Bem-Vindo, {nome}!");
+                                MessageBox.Show($"Bem-vindo, {nome}!");
 
-                               if (tipo == "admin")
+                                if (tipo == "admin")
                                 {
                                     TelaCliente tela = new TelaCliente();
                                     tela.Show();
@@ -74,11 +77,12 @@ namespace SistemadeVendas.Telas
                                     TelaVenda tela = new TelaVenda();
                                     tela.Show();
                                 }
-                               this.Hide();
+
+                                this.Hide();
                             }
                             else
                             {
-                                MessageBox.Show("CPF/CNPJ ou senha inválidos, ou usuário inativo.");
+                                MessageBox.Show("CPF/CNPJ ou senha inválidos.");
                             }
                         }
                     }
@@ -88,11 +92,19 @@ namespace SistemadeVendas.Telas
             {
                 MessageBox.Show("Erro no login: " + ex.Message);
             }
-                
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
