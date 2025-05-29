@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemadeVendas.Modelos
 {
-    internal class Produto
+    public class Produto
     {
+        public string Codigo { get; set; }
+        public string Preco { get; set; }
+        public string Descricao { get; set; }
     }
 }

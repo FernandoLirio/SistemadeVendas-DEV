@@ -74,11 +74,12 @@ namespace SistemadeVendas.Telas
                                 }
                                 else
                                 {
-                                    TelaVenda tela = new TelaVenda();
-                                    tela.Show();
+                                    TelaProduto telaProduto = new TelaProduto();
+                                    telaProduto.Show();
+                                    this.Hide();
                                 }
 
-                                this.Hide();
+                                
                             }
                             else
                             {
