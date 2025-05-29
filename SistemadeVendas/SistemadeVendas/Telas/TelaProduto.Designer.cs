@@ -31,11 +31,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_venda = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listView1_visualizar_Produtos = new System.Windows.Forms.ListView();
+            this.sairToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -47,8 +48,9 @@
             this.menuStrip1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.relatórioToolStripMenuItem,
-            this.sairToolStripMenuItem});
+            this.menu_venda,
+            this.sairToolStripMenuItem,
+            this.sairToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1377, 26);
@@ -70,17 +72,19 @@
             this.produtosToolStripMenuItem.Text = "Produtos";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
-            // relatórioToolStripMenuItem
+            // menu_venda
             // 
-            this.relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            this.relatórioToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
-            this.relatórioToolStripMenuItem.Text = "Relatório";
+            this.menu_venda.Name = "menu_venda";
+            this.menu_venda.Size = new System.Drawing.Size(59, 22);
+            this.menu_venda.Text = "Venda";
+            this.menu_venda.Click += new System.EventHandler(this.relatórioToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(43, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(77, 22);
+            this.sairToolStripMenuItem.Text = "Relatório";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -111,6 +115,12 @@
             this.listView1_visualizar_Produtos.UseCompatibleStateImageBehavior = false;
             this.listView1_visualizar_Produtos.SelectedIndexChanged += new System.EventHandler(this.listView1_visualizar_Produtos_SelectedIndexChanged);
             // 
+            // sairToolStripMenuItem1
+            // 
+            this.sairToolStripMenuItem1.Name = "sairToolStripMenuItem1";
+            this.sairToolStripMenuItem1.Size = new System.Drawing.Size(43, 22);
+            this.sairToolStripMenuItem1.Text = "Sair";
+            // 
             // TelaProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,9 +147,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menu_venda;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListView listView1_visualizar_Produtos;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem1;
     }
 }

@@ -64,5 +64,16 @@ namespace SistemadeVendas.Telas
             telaCadastro.PreencherCampos(produtoSelecionado);
             telaCadastro.ShowDialog();
         }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var telaVenda = new TelaVenda();
+            telaVenda.ShowDialog();
+        }
     }
 }

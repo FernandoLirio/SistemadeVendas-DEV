@@ -20,7 +20,6 @@ namespace SistemadeVendas.Telas
         {
             InitializeComponent();
             this.onSalvarProduto = onSalvarProduto;
-            this.itemEditar = itemEditar;
         }
 
         public TelaCadastroProduto() : this(null) { }
@@ -41,8 +40,17 @@ namespace SistemadeVendas.Telas
                 Descricao = textBoxDescricao.Text
             };
 
-            onSalvarProduto?.Invoke(novoProduto);
-            this.Close();
+            if (itemEditar != null)
+            {
+                // Atualiza os dados do ListViewItem
+                itemEditar.SubItems[0].Text = novoProduto.Codigo;
+                itemEditar.SubItems[1].Text = novoProduto.Preco;
+                itemEditar.SubItems[2].Text = novoProduto.Descricao;
+            }
+            else
+            {
+                onSalvarProduto?.Invoke(novoProduto);
+            }
         }
 
         private void button2_Deletar_Produto_Click(object sender, EventArgs e)
