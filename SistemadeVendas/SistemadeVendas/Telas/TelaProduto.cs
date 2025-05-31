@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemadeVendas.Dados;
 using SistemadeVendas.Modelos;
 
 namespace SistemadeVendas.Telas
 {
     public partial class TelaProduto : Form
     {
+        private List<Produto> listaProdutos = new List<Produto>();
         public TelaProduto()
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace SistemadeVendas.Telas
         {
             TelaCadastroProduto telaCadastro = new TelaCadastroProduto(produto =>
             {
+                listaProdutos.Add(produto); // ✅ adiciona na lista
+
                 ListViewItem item = new ListViewItem(new[]
                 {
                     produto.Codigo,
@@ -72,8 +77,14 @@ namespace SistemadeVendas.Telas
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var telaVenda = new TelaVenda();
+            var telaVenda = new TelaVenda(listaProdutos);
             telaVenda.ShowDialog();
+        }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var relatorio = new TelaRelatorio();
+            relatorio.ShowDialog();
         }
     }
 }

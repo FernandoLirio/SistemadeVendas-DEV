@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemadeVendas.Dados;
 using SistemadeVendas.Modelos;
 
 namespace SistemadeVendas.Telas
@@ -40,16 +42,28 @@ namespace SistemadeVendas.Telas
                 Descricao = textBoxDescricao.Text
             };
 
-            if (itemEditar != null)
+            try
             {
-                // Atualiza os dados do ListViewItem
-                itemEditar.SubItems[0].Text = novoProduto.Codigo;
-                itemEditar.SubItems[1].Text = novoProduto.Preco;
-                itemEditar.SubItems[2].Text = novoProduto.Descricao;
+                using (var conexao = ConexaoBd.ObterConexao())
+                {
+                    conexao.Open();
+
+                    string sql = "INSERT INTO produto (descricao, preco_unitario) VALUES (?, ?)";
+                    using (var comando = new OdbcCommand(sql, conexao))
+                    {
+                        comando.Parameters.AddWithValue("descricao", novoProduto.Descricao);
+                        comando.Parameters.AddWithValue("preco", decimal.Parse(novoProduto.Preco));
+                        comando.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Produto salvo no banco com sucesso!");
+                    onSalvarProduto?.Invoke(novoProduto);
+                    this.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                onSalvarProduto?.Invoke(novoProduto);
+                MessageBox.Show("Erro ao salvar produto no banco: " + ex.Message);
             }
         }
 
