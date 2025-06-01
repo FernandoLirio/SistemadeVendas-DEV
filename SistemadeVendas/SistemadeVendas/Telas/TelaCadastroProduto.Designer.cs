@@ -91,7 +91,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Preço do Porduto:";
+            this.label2.Text = "Preço do Produto:";
             // 
             // label3
             // 
