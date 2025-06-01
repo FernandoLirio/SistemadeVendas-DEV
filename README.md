@@ -40,13 +40,14 @@ CREATE TABLE item_venda (
     quantidade INTEGER NOT NULL,
     valor NUMERIC(10, 2) NOT NULL
 );
-Funcionalidades Implementadas
+----------
+##Funcionalidades Implementadas
 Cadastro de Produtos
 Inserção, edição e exclusão
 
 Salvo no PostgreSQL via OdbcConnection
 
-Cadastro de Clientes
+##Cadastro de Clientes
 Clientes são registros na tabela usuario com tipo = 'cliente'
 
 Tela de Venda
