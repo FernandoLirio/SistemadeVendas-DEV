@@ -9,7 +9,7 @@ Sistema de vendas com cadastro de produtos, registro de vendas, gerenciamento de
 ## 🗃️ Estrutura de Banco de Dados (PostgreSQL)
 
 ### Tabela `usuario`
-Armazena todos os usuários (clientes e administradores):
+Armazena todos os usuários (clientes e administradores) senha do administrador é (admin/123), se quiser pode trocar diretamente no banco de dados:
 
 ```sql
 CREATE TABLE usuario (
