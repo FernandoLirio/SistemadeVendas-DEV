@@ -7,8 +7,6 @@ obj/
 *.log
 *.db
 *.DS_Store
-*.resx
-*.Design.cs
 *.exe
 *.dll
 *.pdb
